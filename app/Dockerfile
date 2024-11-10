@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Create the env vars
 ENV PYTHONBUFFERED=1
-ENV DJANGO_SETTINGS_MODULE=dublin_cycleways.settings
+ENV DJANGO_SETTINGS_MODULE=geodjango_project.settings
 
 # Create the environment:
 COPY ENV.yml /app
