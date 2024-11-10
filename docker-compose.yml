@@ -1,0 +1,65 @@
+services:
+    nginx:
+        image: nginx:latest
+        ports:
+            - 80:80
+            - 443:443
+        volumes:
+            - ./nginx/conf.d:/etc/nginx/conf.d
+            - /etc/letsencrypt/live/lukesadvancedwebmapping.xyz-0002/fullchain.pem:/etc/ssl/certs/fullchain.pem:ro
+            - /etc/letsencrypt/live/lukesadvancedwebmapping.xyz-0002/privkey.pem:/etc/ssl/private/privkey.pem:ro
+        depends_on:
+            - app
+        networks:
+            - geo_network 
+
+    pgadmin4:
+        image: dpage/pgadmin4
+        environment:
+            PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+            PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+        volumes:
+            - ./pgadmin:/var/lib/pgadmin
+        networks:
+            - geo_network
+        depends_on:
+            - postgis
+            - nginx
+
+    postgis:
+        image: postgis/postgis
+        environment:
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+            POSTGRES_DB: ${POSTGRES_DB}
+        volumes:
+            - ./postgres_data:/var/lib/postgresql/data
+        networks:
+            - geo_network
+
+    app:
+        image: lukek101/geodjango_project-app
+        command: uwsgi --ini /app/uwsgi.ini
+        ports:
+            - 8000:8000
+        volumes:
+            - ./data_loaded:/data_loaded
+        networks:
+            - geo_network
+        depends_on:
+            - postgis
+        environment:
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+            POSTGRES_DB: ${POSTGRES_DB}
+            POSTGRES_HOST: ${POSTGRES_HOST}
+            POSTGRES_PORT: ${POSTGRES_PORT}
+            DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
+            DJANGO_SUPERUSER_USERNAME: ${DJANGO_SUPERUSER_USERNAME}
+            DJANGO_SUPERUSER_EMAIL: ${DJANGO_SUPERUSER_EMAIL}
+            DJANGO_SUPERUSER_PASSWORD: ${DJANGO_SUPERUSER_PASSWORD}
+            DJANGO_DEBUG: ${DJANGO_DEBUG}
+            DEPLOY_SECURE: ${DEPLOY_SECURE}
+
+networks:
+    geo_network:
