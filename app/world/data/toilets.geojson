@@ -1,0 +1,341 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.267207103,53.34433879 ]
+     },
+     "properties": {
+     "#":1,
+     "Location":"City Hall, Dame Street, Dublin 2",
+     "Opening Hours":"10am to 5pm Monday to Sunday"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.254380033,53.34621489 ]
+     },
+     "properties": {
+     "#":2,
+     "Location":"Markievicz Leisure Centre, Townsend Street, Dublin 2",
+     "Opening Hours":"10am to 8pm Monday to Friday, 10am to 5pm Saturday and Sunday"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.286452602,53.33911249 ]
+     },
+     "properties": {
+     "#":3,
+     "Location":"St. Catherine�s Sports Centre, Marrowbone Lane, Dublin 8",
+     "Opening Hours":"10am to 8pm Monday to Friday, 10am to 5pm Saturday and Sunday"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.220034775,53.34044814 ]
+     },
+     "properties": {
+     "#":4,
+     "Location":"Irishtown Stadium, Strand Street, Dublin 4",
+     "Opening Hours":"10am to 8pm Monday to Friday, 10am to 5pm Saturday and Sunday"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.305703044,53.39031293 ]
+     },
+     "properties": {
+     "#":5,
+     "Location":"Finglas Leisure Centre, Mellowes Road, Finglas, Dublin 11",
+     "Opening Hours":"10am to 8pm Monday to Friday, 10am to 5pm Saturday and Sunday"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.30715316,53.36831532 ]
+     },
+     "properties": {
+     "#":6,
+     "Location":"Cabra Parkside Sports Centre, Ratoath Road, Cabra, Dublin 7",
+     "Opening Hours":"10am to 8pm Monday to Friday, 10am to 5pm Saturday and Sunday"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.264535188,53.39467911 ]
+     },
+     "properties": {
+     "#":7,
+     "Location":"Ballymun Leisure Centre, Ballymun Road, Ballymun, Dublin 9",
+     "Opening Hours":"10am to 8pm Monday to Friday, 10am to 5pm Saturday and Sunday"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.357629144,53.34132695 ]
+     },
+     "properties": {
+     "#":8,
+     "Location":"Ballyfermot Leisure Centre, Blackditch Road, Ballyfermot, Dublin 10",
+     "Opening Hours":"10am to 8pm Monday to Friday, 10am to 5pm Saturday and Sunday"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.224854275,53.36327085 ]
+     },
+     "properties": {
+     "#":9,
+     "Location":"Clontarf Rd. Sports Pitches, Clontarf Road, Dublin 3",
+     "Opening Hours":"10am to 8pm Monday to Friday, 10am to 5pm Saturday and Sunday"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.265031731,53.39055554 ]
+     },
+     "properties": {
+     "#":10,
+     "Location":"Ballymun Library, Ballymun Road, Ballymun, Dublin 9",
+     "Opening Hours":"Monday & Thursday 1pm to 8pm, Tuesday, Wednesday, Friday & Saturday 10am to 4pm"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.299772061,53.36193836 ]
+     },
+     "properties": {
+     "#":11,
+     "Location":"Cabra Library, Navan Road, Cabra, Dublin 7",
+     "Opening Hours":"Monday & Thursday 1pm to 8pm, Tuesday, Wednesday, Friday & Saturday 10am to 4pm"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.212118944,53.39648962 ]
+     },
+     "properties": {
+     "#":12,
+     "Location":"Coolock Library, Barryscourt Road, Kilmore, Dublin 17",
+     "Opening Hours":"Monday & Thursday 1pm to 8pm, Tuesday, Wednesday, Friday & Saturday 10am to 4pm\n"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.173108002,53.38020697 ]
+     },
+     "properties": {
+     "#":13,
+     "Location":"Raheny Library, Howth Road, Raheny, Dublin 5",
+     "Opening Hours":"Monday & Thursday 1pm to 8pm, Tuesday, Wednesday, Friday & Saturday 10am to 4pm"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.351662915,53.3402167 ]
+     },
+     "properties": {
+     "#":14,
+     "Location":"Ballyfermot Library, Ballyfermot Road, Kylemore, Dublin 10",
+     "Opening Hours":"Monday & Thursday 1pm to 8pm, Tuesday, Wednesday, Friday & Saturday 10am to 4pm"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.2451468,53.34332923 ]
+     },
+     "properties": {
+     "#":15,
+     "Location":"Pearse Street Library, Pearse Street, Dublin 2",
+     "Opening Hours":"Monday & Thursday 1pm to 8pm, Tuesday, Wednesday, Friday & Saturday 10am to 4pm"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.265849544,53.32434978 ]
+     },
+     "properties": {
+     "#":16,
+     "Location":"Rathmines Library, Rathmines, Dublin 6",
+     "Opening Hours":"Monday & Thursday 1pm to 8pm, Tuesday, Wednesday, Friday & Saturday 10am to 4pm"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.259088461,53.3699764 ]
+     },
+     "properties": {
+     "#":17,
+     "Location":"Drumcondra Library, Millmount Avenue, Drumcondra, Dublin 9",
+     "Opening Hours":"Monday 1pm to 8pm, Tuesday, Wednesday, Thursday, Friday and Saturday 10am to 4pm"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.291990646,53.33146909 ]
+     },
+     "properties": {
+     "#":18,
+     "Location":"Dolphins Barn Library, Parnell Road, Crumlin, Dublin 12",
+     "Opening Hours":"Monday 1pm to 8pm, Tuesday, Wednesday, Thursday, Friday and Saturday 10am to 4pm"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.267652302,53.33769695 ]
+     },
+     "properties": {
+     "#":19,
+     "Location":"Kevin Street Library, Lower Kevin Street, Dublin 8",
+     "Opening Hours":"Monday 1pm to 8pm, Tuesday, Wednesday, Thursday, Friday and Saturday 10am to 4pm"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.230541188,53.32828717 ]
+     },
+     "properties": {
+     "#":20,
+     "Location":"Pembroke Library, Anglesea Road, Dublin 4",
+     "Opening Hours":"Monday 1pm to 8pm, Tuesday, Wednesday, Thursday, Friday and Saturday 10am to 4pm"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.285299446,53.30914197 ]
+     },
+     "properties": {
+     "#":21,
+     "Location":"Terenure Library, Templeogue Road, Terenure, Dublin 6W",
+     "Opening Hours":"Monday 1pm to 8pm, Tuesday, Wednesday, Thursday, Friday and Saturday 10am to 4pm"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.321912044,53.31882286 ]
+     },
+     "properties": {
+     "#":22,
+     "Location":"Walkinstown Library, Percy French Road, Walkinstown, Dublin 12",
+     "Opening Hours":"Monday 1pm to 8pm, Tuesday, Wednesday, Thursday, Friday and Saturday 10am to 4pm"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.269243484,53.35006727 ]
+     },
+     "properties": {
+     "#":23,
+     "Location":"Ryders Row, Dublin 1",
+     "Opening Hours":"10am to 6pm Monday to Sunday"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.261304716,53.34090507 ]
+     },
+     "properties": {
+     "#":24,
+     "Location":"Grafton Street, Dublin 2.",
+     "Opening Hours":"10am to 10pm Monday to Sunday"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.171173323,53.35717725 ]
+     },
+     "properties": {
+     "#":25,
+     "Location":"Bull Island, Dollymount Strand, Dublin 3.",
+     "Opening Hours":"10am to 6pm Monday to Sunday"
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.206976814,53.32517727 ]
+     },
+     "properties": {
+     "#":26,
+     "Location":"Strand Road (beside Martello Tower), Sandymount, Dublin 4",
+     "Opening Hours":"24 hours, every day."
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.260894417,53.38257576 ]
+     },
+     "properties": {
+     "#":27,
+     "Location":"Albert College Park, Whitehall, Dublin 9.",
+     "Opening Hours":""
+     }
+   },
+   {
+     "type": "Feature",
+     "geometry": {
+        "type": "Point",
+        "coordinates":  [ -6.270121523,53.33986534 ]
+     },
+     "properties": {
+     "#":28,
+     "Location":"St Patrick's Park, Dublin 8.",
+     "Opening Hours":""
+     }
+   }
+ ]
+ }
