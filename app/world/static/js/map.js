@@ -313,8 +313,8 @@ function loadParks() {
         onEachFeature: function (feature, layer) {
           const isFavorite = userFavorites.some(
             (fav) =>
-              fav.latitude === feature.geometry.coordinates[1] &&
-              fav.longitude === feature.geometry.coordinates[0]
+              fav.latitude === center.lat && fav.longitude === center.lng
+
           );
           const parkName = feature.properties.Name || "Unnamed Park";
           const center = layer.getBounds().getCenter(); // Get the center of the polygon
@@ -328,7 +328,7 @@ function loadParks() {
                               feature.properties.Area_Acre || "N/A"
                             } acres<br>
             <button class="btn btn-${isFavorite ? "danger" : "primary"} btn-sm" 
-              onclick="toggleFavorite(${feature.geometry.coordinates[1]}, ${feature.geometry.coordinates[0]}, '${parkName}')">
+              onclick="toggleFavorite(${center.lat}, ${center.lng}, '${parkName}')">
               ${isFavorite ? "Remove from Favorites" : "Add to Favorites"}
             </button>
                                         <button class="btn btn-primary btn-sm" onclick="searchOnGoogle('${parkName}')">
