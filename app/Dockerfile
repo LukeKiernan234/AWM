@@ -30,3 +30,4 @@ ENTRYPOINT ["/bin/bash", "/app/docker-entrypoint.sh"]
 
 # Run uWSGI
 CMD ["uwsgi", "--ini", "/app/uwsgi.ini"]
+

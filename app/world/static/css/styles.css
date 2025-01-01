@@ -1,0 +1,241 @@
+/* General Styles */
+body {
+    background-color: #fff;
+    color: #000;
+}
+
+h2, h1, p, label, select, button {
+    color: inherit;
+}
+
+/* Main Layout */
+.map-container {
+    display: flex;
+    flex-direction: row; /* Horizontal layout by default */
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Map Section */
+.map-left {
+    flex: 3; /* Map occupies 3/4 of the width */
+    padding-right: 20px;
+}
+
+.map-right {
+    flex: 1; /* Route directions occupy 1/4 of the width */
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 800px; /* Fixed height to match the map */
+    display: flex;
+    flex-direction: column; /* Stack Closest Facility and Directions */
+    gap: 20px;
+}
+
+/* Map Styling */
+#map {
+    width: 100%; /* Full width within the column */
+    height: 600px; /* Fixed height */
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Closest Facility Box */
+.bg-light {
+    background-color: #f8f9fa !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Route Directions */
+.directions-container {
+    flex-grow: 1; /* Take up remaining height */
+    max-height: 450px; /* Match the height of the map */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+}
+
+body.dark-mode #map {
+    background-color: #1e1e1e; /* Dark map background */
+}
+
+body.dark-mode .btn {
+    background-color: #333; /* Dark button background */
+    color: #fff; /* Light button text */
+    border: 1px solid #444; /* Border for visibility */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+body.dark-mode .btn:hover {
+    background-color: #444; /* Slightly lighter on hover */
+    color: #ffffff;
+}
+
+body.dark-mode select {
+    background-color: #333; /* Match button background */
+    color: #fff; /* Light text */
+    border: 1px solid #444; /* Consistent border */
+    padding: 5px; /* Add padding for better usability */
+    border-radius: 4px; /* Rounded edges */
+}
+
+body.dark-mode .bg-light {
+    background-color: #1e1e1e !important; /* Dark background */
+    color: #ffffff; /* Light text */
+    border: 1px solid #333; /* Border for contrast */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Light shadow */
+}
+
+body.dark-mode .directions-container {
+    background-color: #1e1e1e; /* Dark background */
+    color: #ffffff; /* Light text */
+    border-color: #444; /* Border color for contrast */
+}
+
+body.dark-mode .list-group-item {
+    background-color: #333; /* Dark list item background */
+    color: #ffffff; /* Light list item text */
+    border-color: #444; /* Border for consistency */
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #333; /* Match other inputs */
+    color: #fff; /* Light text */
+    border: 1px solid #444; /* Border for contrast */
+    padding: 5px; /* Add padding */
+    border-radius: 4px; /* Rounded edges */
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #bbb; /* Light placeholder text */
+}
+
+body.dark-mode a {
+    color: #1e90ff; /* Bright blue for links */
+    text-decoration: none; /* No underline */
+}
+
+body.dark-mode a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+body.dark-mode .navbar {
+    background-color: #1e1e1e; /* Dark navbar */
+    color: #ffffff; /* Light text */
+    border-bottom: 1px solid #444; /* Border for contrast */
+}
+
+body.dark-mode .navbar a {
+    color: #ffffff; /* Light links */
+}
+
+body.dark-mode .navbar a:hover {
+    color: #1e90ff; /* Highlight link on hover */
+}
+
+/* General Login Page Styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9fa; /* Light background */
+    padding: 20px;
+}
+
+.login-card {
+    background-color: #ffffff; /* White card */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Dark text */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+}
+
+.login-form input {
+    padding: 10px;
+    border: 1px solid #ced4da; /* Light border */
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.login-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-footer .register-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-footer .register-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .map-container {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .map-right {
+        width: 100%; /* Full width for mobile */
+        margin-top: 20px;
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Stack navbar links */
+        align-items: flex-start;
+    }
+
+    .navbar .nav-item {
+        margin-bottom: 10px; /* Space between links */
+    }
+}

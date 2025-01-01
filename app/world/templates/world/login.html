@@ -1,16 +1,22 @@
-{% extends 'base.html' %}
+{% extends "world/base.html" %}
+{% load static %}
 
-{% block title %}Login - My Website{% endblock %}
-
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <h2 class="text-center">Login</h2>
-        <form method="POST" action="{% url 'login' %}">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary w-100">Login</button>
-        </form>
-    </div>
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="login-title">Login</h2>
+    <form method="POST" class="login-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary login-btn">Login</button>
+    </form>
+    <p class="login-footer">
+      Don't have an account? <a href="{% url 'register' %}" class="register-link">Register</a>
+    </p>
+  </div>
 </div>
+{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 {% endblock %}

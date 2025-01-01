@@ -1,0 +1,86 @@
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+    h2, h1, p, label, select, button {
+        color: inherit;
+    }
+
+/* Main Layout */
+.map-container {
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+    gap: 20px; /* Space between map and directions */
+    align-items: flex-start; /* Align top of items */
+}
+
+/* Map Section */
+.map-left {
+    flex: 3; /* Map occupies 3/4 of the width */
+    padding-right: 20px;
+}
+
+.map-right {
+    flex: 1; /* Route directions occupy 1/4 of the width */
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 600px; /* Fixed height to match the map */
+    display: flex;
+    flex-direction: column; /* Stack Closest Facility and Directions */
+    gap: 20px;
+}
+
+/* Map Styling */
+#map {
+    width: 100%; /* Full width within the column */
+    height: 600px; /* Fixed height */
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Closest Facility Box */
+.bg-light {
+    background-color: #f8f9fa !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Route Directions */
+/* Route Directions */
+.directions-container {
+    flex-grow: 1; /* Take up remaining height */
+    max-height: 600px; /* Match the height of the map */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode #map {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .btn {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+}
+body.dark-mode .btn:hover {
+    background-color: #444;
+}
+
+body.dark-mode select {
+    background-color: #333;
+    color: #fff;
+}

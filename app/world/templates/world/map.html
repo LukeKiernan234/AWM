@@ -1,127 +1,56 @@
 {% extends 'world/base.html' %}
-
+{% load static %}
 {% block title %}Map{% endblock %}
 
 {% block content %}
-<h2>Find a public toilet in Dublin</h2>
-<div id="map" style="height: 600px;"></div>
-<button class="btn btn-primary" onclick="updateLocation()">Update Location</button>
+<div class="container-fluid map-container">
+    <div class="map-left">
+        <h2>Welcome to Dublin Public Amenities</h2>
+        <h3>Facilities</h3>
+        <div>
+            <label for="facility-type">Select Facility Type:</label>
+            <select id="facility-type" class="form-select" onchange="loadFacility()">
+                <option value="toilets" selected>Public Toilets</option>
+                <option value="parks">Parks</option>
+                <option value="museums">Museums</option>
+                <option value="churches">Churches</option>
+                <option value="shopping_centres">Shopping Centres</option>
+            </select>
+            <button class="btn btn-primary mt-2" onclick="updateLocation()">Update Location</button>
+            <button id="map-toggle" class="btn btn-secondary mt-2" onclick="toggleMapType()">Switch to Satellite View</button>
+            <button id="toggle-favorites" class="btn btn-info mt-2" onclick="toggleFavoritesView()">Show Favorites</button>
+            <button id="install-button" class="btn btn-primary" hidden>Install App</button>
+        </div>
+        <div id="map" style="margin-top: 20px;"></div>
+    </div>
 
-<h1>Closest Toilet</h1>
-<p>The closest toilet is: <span id="closest-toilet">Loading...</span></p>
-<p>Distance: <span id="distance">Loading...</span></p>
+
+    <div class="map-right">
+        <div class="bg-light p-3 rounded">
+            <h1>Closest Facility</h1>
+            <p>The closest facility is: <span id="closest-facility">Loading...</span></p>
+            <p>Distance: <span id="distance">Loading...</span></p>
+            <button id="get-route" class="btn btn-secondary mb-3" onclick="getRoute()" disabled>Get Route</button>
+        </div>
+
+        <div class="bg-light p-3 rounded mt-3 directions-container">
+            <h1>Route Directions</h1>
+            <ul id="directions-list" class="list-group"></ul>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
+<script src="{% static 'js/theme.js' %}"></script>
 <script>
-    var map = L.map('map').setView([0, 0], 2);  // Initialize the map
-
-    // Add OpenStreetMap tiles
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-
-    var marker;
-    var circle;
-    var closestToilet = null;
-    var closestDistance = Infinity;
-
-    function loadToilets() {
-        fetch('{% url 'toilet_geojson' %}')
-            .then(response => response.json())
-            .then(data => {
-                L.geoJSON(data, {
-                    onEachFeature: function(feature, layer) {
-                        layer.bindPopup('<h3>' + feature.properties.location + '</h3><p>' + feature.properties.opening_hours + '</p>');
-
-                        if (marker) {
-                            var distance = marker.getLatLng().distanceTo(layer.getLatLng()); // Calculate the distance
-                            if (distance < closestDistance) {
-                                closestDistance = distance;
-                                closestToilet = feature.properties.location;
-                            }
-                            console.log('Distance: ' + distance);
-                        }
-                    }
-                }).addTo(map);
-                updateClosestToiletInfo(); // Update the closest toilet info after loading toilets
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-            });
-    }
-
-    function updateClosestToiletInfo() {
-        if (closestToilet) {
-            // Update the DOM to display the closest toilet and distance
-            document.getElementById('closest-toilet').textContent = closestToilet;
-            document.getElementById('distance').textContent = (closestDistance / 1000).toFixed(2) + ' km'; // Convert to km
-        } else {
-            document.getElementById('closest-toilet').textContent = 'Not found';
-            document.getElementById('distance').textContent = 'N/A';
-        }
-    }
-
-    function updateMap(latitude, longitude, accuracy) {
-        if (marker) {
-            map.removeLayer(marker);
-        }
-        if (circle) {
-            map.removeLayer(circle);
-        }
-
-        marker = L.marker([latitude, longitude]).addTo(map);
-        circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
-        map.setView([latitude, longitude], 13);  // Zoom into the user's location
-        loadToilets();
-    }
-
-    function updateLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                function(position) {
-                    var latitude = position.coords.latitude;
-                    var longitude = position.coords.longitude;
-                    var accuracy = position.coords.accuracy;
-
-                    updateMap(latitude, longitude, accuracy);
-
-                    // Send location to Django view
-                    fetch('{% url 'update_location' %}', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                            'X-CSRFToken': '{{ csrf_token }}'  // Include CSRF token
-                        },
-                        body: 'latitude=' + latitude + '&longitude=' + longitude
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            console.log('Location updated successfully');
-                        } else {
-                            console.error('Error updating location:', data.error);
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Fetch error:', error);
-                    });
-                },
-                function(error) {
-                    console.error('Error getting location:', error);
-                }
-            );
-        } else {
-            console.error('Geolocation is not supported by this browser.');
-        }
-    }
-
-    // On page load, update the location
-    document.addEventListener('DOMContentLoaded', function() {
-        updateLocation();
-        
-        // Optionally, update location periodically
-        // setInterval(updateLocation, 60000);  // Update every 60 seconds
-    });
+    const urls = {
+        updateLocation: "{% url 'update_location' %}",
+        toiletGeojson: "{% url 'toilet_geojson' %}",
+        parksGeojson: "{% url 'parks_geojson' %}",
+        toggleFavorite: "{% url 'toggle_favorite' %}",
+        getFavorites: "{% url 'get_favorites' %}"
+    };
 </script>
+<script src="{% static 'js/map.js' %}"></script>
 {% endblock %}
